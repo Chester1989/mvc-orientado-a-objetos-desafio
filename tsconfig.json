@@ -5,6 +5,7 @@
     "outDir": "build",
     "resolveJsonModule": true,
     "noUnusedParameters": false,
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false
   }
 }
