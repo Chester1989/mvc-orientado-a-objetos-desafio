@@ -23,9 +23,14 @@ class ContactsCollection {
   }
 
   addOne(contact: Contact) {
-    this.contacts.push(contact);
-    this.save();
-  }
+  // Buscar el id máximo actual
+  const maxId = this.contacts.reduce((max, c) => c.id > max ? c.id : max, 0);
+  // Asignar id nuevo +1
+  contact.id = maxId + 1;
+  this.contacts.push(contact);
+  this.save();
+}
+
 
   save() {
     const data = JSON.stringify(this.contacts, null, 2);
